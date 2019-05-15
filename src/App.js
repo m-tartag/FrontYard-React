@@ -57,22 +57,48 @@ class App extends Component {
     });
   };
   render() {
+    const style = {
+      backgroundColor: "white",
+      font: "inherit",
+      border: "1px solid blue",
+      padding: "8px",
+      cursor: "pointer"
+    };
     return (
       <div className="App">
-        <button onClick={this.switchNameHandler.bind(this, "Charlie")}>
+        <button
+          style={style}
+          onClick={this.switchNameHandler.bind(this, "Charlie")}
+        >
           Switch Name
         </button>
-        <h1>
-          <Person
-            first={this.state.persons[0].first}
-            last={this.state.persons[0].last}
-            email={this.state.persons[0].email}
-            age={this.state.persons[0].age}
-            location={this.state.persons[0].location}
-            click={this.switchNameHandler.bind(this, "Ronald")}
-            changed={this.nameChangeHandler}
-          />
-        </h1>
+        <Person
+          first={this.state.persons[0].first}
+          last={this.state.persons[0].last}
+          email={this.state.persons[0].email}
+          age={this.state.persons[0].age}
+          location={this.state.persons[0].location}
+          click={this.switchNameHandler.bind(this, "Ronald")}
+          changed={this.nameChangeHandler}
+        />
+        <Person
+          first={this.state.persons[0].first}
+          last={this.state.persons[0].last}
+          email={this.state.persons[0].email}
+          age={this.state.persons[0].age}
+          location={this.state.persons[0].location}
+          click={this.switchNameHandler.bind(this, "Ronald")}
+          changed={this.nameChangeHandler}
+        />
+        <Person
+          first={this.state.persons[0].first}
+          last={this.state.persons[0].last}
+          email={this.state.persons[0].email}
+          age={this.state.persons[0].age}
+          location={this.state.persons[0].location}
+          click={this.switchNameHandler.bind(this, "Ronald")}
+          changed={this.nameChangeHandler}
+        />
       </div>
     );
   }
