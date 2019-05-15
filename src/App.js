@@ -28,12 +28,12 @@ class App extends Component {
   // Switch-Name Handler Function
   // Changes States
 
-  switchNameHandler = () => {
+  switchNameHandler = newName => {
     console.log("Was Clicked..");
     this.setState({
       persons: [
         {
-          first: "Alexander",
+          first: newName,
           last: "Michaels",
           email: "chizz51@gmail.com",
           age: "39",
@@ -43,10 +43,25 @@ class App extends Component {
     });
   };
 
+  nameChangeHandler = event => {
+    this.setState({
+      persons: [
+        {
+          first: event.target.value,
+          last: "Michaels",
+          email: "chizz51@gmail.com",
+          age: "39",
+          location: "Massachusetts"
+        }
+      ]
+    });
+  };
   render() {
     return (
       <div className="App">
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={this.switchNameHandler.bind(this, "Charlie")}>
+          Switch Name
+        </button>
         <h1>
           <Person
             first={this.state.persons[0].first}
@@ -54,6 +69,8 @@ class App extends Component {
             email={this.state.persons[0].email}
             age={this.state.persons[0].age}
             location={this.state.persons[0].location}
+            click={this.switchNameHandler.bind(this, "Ronald")}
+            changed={this.nameChangeHandler}
           />
         </h1>
       </div>

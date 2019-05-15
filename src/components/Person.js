@@ -5,13 +5,14 @@ export class Person extends Component {
     return (
       <div>
         <ul>
-          <li>
+          <li onClick={this.props.click}>
             Name: {this.props.first} {this.props.last}
           </li>
           <li>Age: {this.props.age}</li>
           <li>E-mail: {this.props.email}</li>
           <li>Location: {this.props.location}</li>
         </ul>
+        <input type="text" onChange={this.props.changed} />
       </div>
     );
   }
