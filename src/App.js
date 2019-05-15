@@ -1,33 +1,61 @@
 import React, { Component } from "react";
-import Todos from "./components/Todos";
+import Person from "./components/Person";
+
 class App extends Component {
-  // STATE
+  // Establishing State
+
   state = {
-    todos: [
+    persons: [
       {
-        id: 1,
-        title: "Led Zepellin",
-        completed: false
-      },
+        first: "Matt",
+        last: "Tartaglia",
+        email: "mattbrs51@gmail.com",
+        age: "31",
+        location: "Providence"
+      }
+    ],
+    foo: [
       {
-        id: 2,
-        title: "Iron Maiden",
-        completed: true
-      },
-      {
-        id: 3,
-        title: "Black Sabbath",
-        completed: false
+        first: "Foo",
+        last: "Boo",
+        email: "none",
+        age: "99",
+        location: "Providence"
       }
     ]
+  };
+
+  // Switch-Name Handler Function
+  // Changes States
+
+  switchNameHandler = () => {
+    console.log("Was Clicked..");
+    this.setState({
+      persons: [
+        {
+          first: "Alexander",
+          last: "Michaels",
+          email: "chizz51@gmail.com",
+          age: "39",
+          location: "Massachusetts"
+        }
+      ]
+    });
   };
 
   render() {
     return (
       <div className="App">
-        <p>
-          <Todos todos={this.state.todos} />
-        </p>
+        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <h1>
+          <Person
+            first={this.state.persons[0].first}
+            last={this.state.persons[0].last}
+            email={this.state.persons[0].email}
+            age={this.state.persons[0].age}
+            location={this.state.persons[0].location}
+          />
+        </h1>
       </div>
     );
   }
