@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
 import Todos from './components/Todos';
-
 class App extends Component {
   
   // STATE
@@ -16,7 +14,7 @@ class App extends Component {
     {
         id: 2,
         title: 'Iron Maiden',
-        completed: false
+        completed: true
     },
     {
         id: 3,
@@ -29,7 +27,6 @@ class App extends Component {
     return (
       <div className="App">
         <p><Todos todos={this.state.todos} /></p>
-        <code>Never Stop Coding</code>
       </div>
 
         )
